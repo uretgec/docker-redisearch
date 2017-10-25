@@ -25,4 +25,5 @@ RUN set -ex;\
     mkdir -p "$LIBDIR";
 COPY --from=builder /src/redisearch.so  "$LIBDIR"
 
+COPY redis.conf /usr/local/etc/redis/redis.conf
 CMD ["redis-server", "/usr/local/etc/redis/redis.conf", "--loadmodule", "/var/lib/redis/modules/redisearch.so"]
