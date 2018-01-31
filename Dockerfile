@@ -1,4 +1,4 @@
-FROM redislabs/redisearch:1.0.5
+FROM redislabs/redisearch:1.0.6
 
 COPY redis.conf /usr/local/etc/redis/redis.conf
 CMD ["redis-server", "/usr/local/etc/redis/redis.conf", "--loadmodule", "/usr/lib/redis/modules/redisearch.so"]
